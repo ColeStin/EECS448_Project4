@@ -1,0 +1,49 @@
+.centerHeading{
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.pictureOfPet{
+    height: 300px;
+    border: 3px solid black;
+}
+
+.postContainer{
+    padding: 2px;
+    margin: 2px auto;
+    border: 3px solid black;
+    color:gold;
+    background-image: url("bonebackground.jpg");
+    background-size: cover;
+    background-size: contain;
+    border-radius: 10px;
+
+}
+
+.petDescriptionBox{
+    margin: inherit;
+    height: 100%;
+    width: 100%;
+}
+
+.petName{
+    text-align: left;
+    color: inherit;
+}
+
+.petDescription{
+    text-align: left;
+    color: inherit;
+}
+
+.ownerInfromation{
+    text-align: left;
+    color: inherit;
+}
+
+#addNewPost{
+  box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.19);
+  background: #ADD8E6;
+}
