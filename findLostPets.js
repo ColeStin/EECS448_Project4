@@ -31,7 +31,7 @@ function loadPage(){
 function generatePost(petName, petType, petBreed, description, ownerName, zipCode, contactNumber){
     console.log("generating post");
     $("#postContainer").append( `
-    <div class='col-sm-12 col-md-6'>
+    <div class='col-sm-12 col-md-6 col-xl-4'>
         <div class='row postContainer container'>
             <div class='portrait col-sm-12 col-md-8'>
             <img src="getPhoto.php?url=`+petName+contactNumber+`.jpg" alt="`+petName+contactNumber+`" id="`+petName+contactNumber+`">
