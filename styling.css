@@ -25,16 +25,29 @@
 .petName{
     text-align: left;
     color: inherit;
+    display: block;
 }
 
 .petDescription{
     text-align: left;
     color: inherit;
+    display: block;
+}
+.petType{
+    text-align: left;
+    color: inherit;
+    display: block;
+}
+.petBreed{
+    text-align: left;
+    color: inherit;
+    display: block;
 }
 
 .ownerInfromation{
     text-align: left;
     color: inherit;
+    display: block;
 }
 
 #addNewPost{

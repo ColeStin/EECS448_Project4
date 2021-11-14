@@ -5,12 +5,14 @@
     </head>
 
     <body class='container shadow-lg col-sm-11 p-3 mb-5 bg-white rounded'>
+        
+        
         <div class='row'>
             <div class='col-sm-6 col-lg-3 centerHeading'>
                 <h3>Find Lost Pets!</h3>
             </div>
             <div class='col-sm-6 col-lg-3 centerHeading'>
-                
+                <button class='btn btn-lg btn-primary' id='makeAPost'>Make A Post!</button>
             </div>
             <div class='col-sm-6 col-lg-3 centerHeading'>
                 
@@ -22,31 +24,78 @@
         <div id='postContainer' class='row' style="margin: 2px;">
 
         </div>
-        <br>
-        <div id='addNewPost'>
-          <form>
-            Fill Out Information on Your Missing Pet Below and Submit to Create a Post!
-            <br>
-            <label for="cat"><input type="radio" name="animal"> Cat</label>
-            <label for="dog"><input type="radio" name="animal"> Dog</label>
-            <label for="ferret"><input type="radio" name="animal"> Ferret</label>
-            <label for="hamster"><input type="radio" name="animal"> Hamster</label>
-            <label for="bird"><input type="radio" name="animal"> Bird</label>
-            <br>
-            <input type="text" placeholder="Pet's Name">
-            <input type="text" placeholder="Pet's Breed">
-            <br>
-            <input type="text" placeholder="Owner's Name">
-            <input type="text" placeholder="ZIP Code">
-            <br>
-            <input type="text" placeholder="Contact Number">
-            <br>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Create a Post</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <h4>Fill Out Information on Your Missing Pet Below and Submit to Create a Post!</h4>
+                        <div style="padding: 5px;">
+                            <select class='animalType form-control' id="animalType">
+                                <option value="cat">Cat</option>
+                                <option value="dog">Dog</option>
+                                <option value="ferret">Ferret</option>
+                                <option value="hamster">Hamster</option>
+                                <option value="bird">Bird</option>
+                            </select>
+                        </div>
+                        <div style="padding: 5px;">
+                            <input type="text" class='form-control' placeholder="Pet's Name" id='petName'>
+                        </div>
+                        <div style="padding: 5px;">
+                            <input type="text" class='form-control' placeholder="Pet's Breed" id='petBreed'>
+                        </div>
+                        <div style="padding: 5px;">
+                            <input type="text" class='form-control' placeholder="Owner's Name" id='ownerName'>
+                        </div>
+                        <div style="padding: 5px;">
+                            <textarea rows='2' class='form-control' placeholder="Pet Description" id='petDescription'></textarea>
+                        </div>
+                        <div style="padding: 5px;">
+                            <input type="text" class='form-control' placeholder="ZIP Code" id='zipCode'>
+                        </div>
+                        <div style="padding: 5px;">
+                            <input type="text" class='form-control' placeholder="Contact Number" id='contactNumber'>
+                        </div>
+                        <div style="padding:5px">
+                            <form id='image'>
+                                <div>
+                                    <label for="img">Select image:</label>
+                                    <input type="file" id="img" name="img" accept="image/*">
+                                </div>
+                            </form>
+                        </div>
+                        
+                      </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id='createPost'>Create Post</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src='findLostPets.js'></script>
+        <script type="text/javascript" src='js/bootstrap.min.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <link rel='stylesheet' href='styling.css'>
+        <link rel='stylesheet' href='css/bootstrap.min.css'>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     </body>
-    <script type="text/javascript" src='jquery.js'></script>
-    <script type="text/javascript" src='findLostPets.js'></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel='stylesheet' href='styling.css'>
+    
 </html>
+
+
+
+
+
+
+  

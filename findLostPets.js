@@ -1,6 +1,19 @@
 //document ready funciton
 $(document).ready(function(){
-    loadPage()
+    //loadPage();
+    $("#exampleModal").modal("toggle");
+    $('.animalType').select2({
+        placeholder : {
+            id: '-1',
+            text: 'Select Animal Type'
+          },
+        width : "100%"
+
+    });
+
+    $("#createPost").click(function(){
+        createSendData();
+    });
 });
 
 function loadPage(){
@@ -63,3 +76,48 @@ function generatePost(petName, petType, petBreed, description, ownerName, zipCod
 
 
 }
+
+function createPost(sendPacket, imgName){
+    console.log('creating post');
+    var senddata = createSendData();
+    //calls and inputs photo to files system
+    $.ajax({
+        url:'uploadPhoto.php',
+        type: 'POST',
+        datatype: "script",
+        contentType: false, 
+        cache: false,
+        processData: false,
+        data: sendPacket,
+        complete: function (response) {
+            console.log(response);
+        },
+        error: function () {
+            console.log("error")
+        }
+    })
+}
+
+function createSendData(){
+    var data = {};
+    data.petName = $("#petName").val();
+    data.petType = $("#animalType").select2('data').id;
+    data.petBreed = $("#petBreed").val();
+    data.petDescription = $("#petDescription").val();
+    data.ownerName = $("#ownerName").val();
+    data.zipCode = $("#zipCode").val();
+    data.contactNumber = $("#contactNumber").val();
+    console.log(data)
+
+}
+
+$("#img").change(function() {
+    console.log(this.files[0])
+    $("#imagePreview").removeClass('d-none');
+    img_data = new FormData();
+    img_data.append("file", this.files[0])
+    console.log(img_data)
+    createPost(img_data, this.files[0].name);
+    console.log(newIMG);
+  });
+  
