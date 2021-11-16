@@ -3,9 +3,6 @@
     if($funciton=="getContentsOfPage"){
         getContentsOfPage();
     }
-    else if($function == "getPhoto"){
-        getPhoto($_POST['photoURL']);
-    }
 
 
     function getContentsOfPage(){
@@ -14,13 +11,14 @@
         $conn = sqlsrv_connect($serverName, $connection_info);
         if($conn){
             $sql = "
-            SELECT TOP (5) [petName]
+            SELECT [petName]
                 ,[petType]
                 ,[petBreed]
                 ,[description]
                 ,[ownerName]
                 ,[zipCode]
                 ,[ContactNumber]
+                ,[portrait]
             FROM [DB_147588_findlostpets].[dbo].[Pet]
             ";
             $sqlCall = sqlsrv_query($conn, $sql);
@@ -38,5 +36,6 @@
         
 
         sqlsrv_close($conn);
+        exit;
     }
 ?>

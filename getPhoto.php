@@ -5,5 +5,6 @@
     header("Content-Type: " . $fileData['MimeType']);
     header("Content-Length: " . $fileData['FileSize']);
 
-    readfile($file)
+    readfile($file);
+    exit;
 ?>
