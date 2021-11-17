@@ -125,7 +125,7 @@ function createPost(sendPacket, imgName){
 function createSendData(){
     var data = {};
     data.petName = $("#petName").val();
-    data.petType = $("#animalType").select2('data').id; //this statement is funky, doesn't quite catch the real animal name
+    data.petType = $('#animalType :selected').text();
     data.petBreed = $("#petBreed").val();
     data.petDescription = $("#petDescription").val();
     data.ownerName = $("#ownerName").val();
