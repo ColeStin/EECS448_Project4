@@ -18,47 +18,46 @@ function testSuite() {
 
                 complete: function (response) {
                         testResults = response.responseText;
-                        console.log(testResults)
                         if(testResults.includes("Connection to Server Successful$")) {
-                                console.log("Test 1: Successful")
+                                console.log("Test 1: Attempt to connect to Server: Successful")
                         }
                         else {
-                                console.log("Test 1: Failed")
+                                console.log("Test 1: Attempt to connect to Server: Failed")
                         }
 
                         if(testResults.includes("Data Transfer to Server Successful$")) {
-                                console.log("Test 2: Successful")
+                                console.log("Test 2: Attempt to transfer data to Server: Successful")
                         }
                         if(testResults.includes("Data Transfer to Server Failed$")) {
-                                console.log("Test 2: Failed")
+                                console.log("Test 2: Attempt to transfer data to Server: Failed")
                         }
 
                         if(testResults.includes("Data Received from Server$")) {
-                                console.log("Test 3: Successful")
+                                console.log("Test 3: Attempt to receive data from server: Successful")
                         }
                         else {
-                                console.log("Test 3: Failed");
+                                console.log("Test 3: Attempt to receive data from server: Failed");
                         }
 
                         if(testResults.includes("Connection to Database Successful$")) {
-                                console.log("Test 4: Successful")
+                                console.log("Test 4: Attempt to connect to database: Successful")
                         }
                         if(testResults.includes("Connection to Database Failed$")) {
-                                console.log("Test 4: Failed")
+                                console.log("Test 4: Attempt to connect to database: Failed")
                         }
 
                         if(testResults.includes("Database Query Successful$")) {
-                                console.log("Test 5: Successful")
+                                console.log("Test 5: Attempt to query database: Successful")
                         }
                         if(testResults.includes("Database Query Failed$")) {
-                                console.log("Test 5: Failed")
+                                console.log("Test 5: Attempt to query database: Failed")
                         }
 
                         if(testResults.includes("Database Query Returns Correct Value$")) {
-                                console.log("Test 6: Successful")
+                                console.log("Test 6: Check if database query returns correct value: Successful")
                         }
                         if(testResults.includes("Database Query Returns Incorrect Value$")) {
-                                console.log("Test 6: Failed")
+                                console.log("Test 6: Check if database query returns correct value: Failed")
                         }
                 }
         })
