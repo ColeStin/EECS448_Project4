@@ -111,6 +111,7 @@ function createPost(sendPacket, imgName){
                 datatype: "json",
                 data: senddata,
                 complete: function (response) {
+                    console.log(response);
                     $("#postModal").modal("toggle"); //only after the information is accepted and the server does not have an issue with the data does the modal close
                 },
                 error: function () {
@@ -136,6 +137,7 @@ function createSendData(){
     data.contactNumber = $("#contactNumber").val();
     data.imgName = ""; //need to have a present key because after returning the dictionary
     data.dateLost = $("#dateLost").val();
+    console.log($("#dateLost").val());
     console.log(data); //to verify the data is send correctly
     return data;
 }
