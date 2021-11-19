@@ -40,7 +40,6 @@ function loadPage(){
 //have contact information
 function generatePost(petName, petType, petBreed, description, ownerName, zipCode, contactNumber, portrait, dateLost){    //takes every attribute displayed.
                                                                                                                 //will generate a singular post in the postContainer div
-    console.log("generating post");
     $("#postContainer").append( `
     <div class='col-sm-12 col-md-6 col-xl-4'>
         <div class='row postContainer container'>
@@ -87,9 +86,7 @@ function createPost(sendPacket, imgName){
     senddata.imgName = imgName; //since img name needs to be in the DB table, it adds the name to the send data (goes to SQL call)
     //calls and inputs photo to files system
     $("#createPost").click(function(){ //the packages are only send when the user presses "submit" button because this function is ran every time an image is submitted
-        console.log("creating post to click")
         if(goodToSendData()){ //function to check and make sure data is good to send
-            console.log("sending data is good");
             $.ajax({ //this is to upload the photo individually
                 url:'uploadPhoto.php',
                 type: 'POST',
@@ -136,9 +133,7 @@ function createSendData(){
     data.zipCode = $("#zipCode").val();
     data.contactNumber = $("#contactNumber").val();
     data.imgName = ""; //need to have a present key because after returning the dictionary
-    data.dateLost = $("#dateLost").val();
-    console.log($("#dateLost").val());
-    console.log(data); //to verify the data is send correctly
+    data.dateLost = $("#dateLost").val(); //to verify the data is send correctly
     return data;
 }
 
