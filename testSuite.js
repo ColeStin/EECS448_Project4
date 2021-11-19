@@ -56,7 +56,7 @@ function testSuite() {
                         if(testResults.includes("Database Query Returns Correct Value$")) {
                                 console.log("Test 6: Check if database query returns correct value: Successful")
                         }
-                        if(testResults.includes("Database Query Returns Incorrect Value$")) {
+                        else {
                                 console.log("Test 6: Check if database query returns correct value: Failed")
                         }
                 }
