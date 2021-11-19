@@ -94,6 +94,10 @@
   background-color: rgb(4,100,106);
 }
 
+.siteLogo{
+
+}
+
 body{
   background-image: url("bodyBackground.jpeg");
 }
@@ -109,12 +113,16 @@ body{
   position: relative;
 }
 
+/*The following code is an id modifier that allows given HTML elements to
+utilize the slide animation constructed below for a 4 second animation*/
 #slide{
   animation-name: slide;
   animation-duration: 4s;
   animation-timing-function: ease-out;
 }
 
+/*The following code is a CSS animation that animates using keyframes, It
+slides an element down, while transforming its opacity from 0 to 1*/
 @keyframes slide{
   0%{
     opacity: 0;
