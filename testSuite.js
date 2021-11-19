@@ -4,8 +4,37 @@
 //this function will run after the "Run Test Suite" button is clicked and will call all the functions corresponding with different
 //tests and compile all the results to display in console
 $("#runTestSuite").click(function(){
-
+        testSuite();
 });
+
+function testSuite() {
+        var senddata = createSendData(); //generates data to send to SQL DB
+        senddata.imgName = "test.jpg"; //since img name needs to be in the DB table, it adds the name to the send data (goes to SQL call)
+        jQuery.ajax({
+                type: 'POST',
+                url: 'testSuite.php',
+                dataType: 'text',
+                data: senddata,
+
+                complete: function (response) {
+                        console.log(response);
+                }
+        })
+}
+
+//modified version of createSendData in order to create test data without user input
+function createTestData(){
+        var data = {};
+        data.petName = "testName"
+        data.petType = "testType"
+        data.petBreed = "testType"
+        data.petDescription = "testType"
+        data.ownerName = "testType"
+        data.zipCode = "testType"
+        data.contactNumber = "testType"
+        data.imgName = "test.jpg";
+        return data;
+    }
 
 //needed tests:
 //  Client/Server relations
