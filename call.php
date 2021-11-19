@@ -19,6 +19,7 @@
                 ,[zipCode]
                 ,[ContactNumber]
                 ,[portrait]
+                ,[dateLost]
             FROM [DB_147588_findlostpets].[dbo].[Pet]
             "; //the sql query is always the same when getting post information
             $sqlCall = sqlsrv_query($conn, $sql); //posts the query to DB
