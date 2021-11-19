@@ -3,17 +3,18 @@
     margin: auto;
     width: 50%;
     padding: 10px;
+    font-family: "Arial", Sans-serif;
 }
 
 .postContainer{
     padding: 2px;
-    margin: 2px auto;
-    border: 3px solid black;
-    color:gold;
-    background-image: url("bonebackground.jpg");
+    margin: 10px auto;
+    border-left: 8px solid rgb(186,143,112);
+    color: rgb(20,56,58);
+    background-color: rgb(254,209,179);
     background-size: cover;
-    border-radius: 10px;
-
+    box-shadow: 10px 4px 5px rgb(4,100,106);
+    font-family: "Papyrus", fantasy;
 }
 
 .petDescriptionBox{
@@ -26,28 +27,38 @@
     text-align: left;
     color: inherit;
     display: block;
+    border-left: 4px solid rgb(186,143,112);
+    margin: 3px;
 }
 
 .petDescription{
     text-align: left;
     color: inherit;
     display: block;
+    border-left: 4px solid rgb(186,143,112);
+    margin: 3px;
 }
 .petType{
     text-align: left;
     color: inherit;
     display: block;
+    border-left: 4px solid rgb(186,143,112);
+    margin: 3px;
 }
 .petBreed{
     text-align: left;
     color: inherit;
     display: block;
+    border-left: 4px solid rgb(186,143,112);
+    margin: 3px;
 }
 
 .ownerInfromation{
     text-align: left;
     color: inherit;
     display: block;
+    border-left: 4px solid rgb(186,143,112);
+    margin: 3px;
 }
 
 #addNewPost{
@@ -65,4 +76,44 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.postContainer:hover{
+  transform: scale(1.1);
+}
+
+.topline{
+  background-color: rgb(4,100,106);
+}
+
+body{
+  background-image: url("bodyBackground.jpeg");
+}
+
+.title{
+  color: rgb(254,209,179);
+  font-size: 100px;
+  text-shadow: 5px 0px rgb(186,143,112);
+  border-bottom: 8px solid rgb(186,143,112);
+  margin-left: 20%;
+  margin-right: 20%;
+  font-weight: bold;
+  position: relative;
+}
+
+#slide{
+  animation-name: slide;
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes slide{
+  0%{
+    opacity: 0;
+    top: -50px;
+  }
+  100%{
+    opacity: 1;
+    top: 0px;
+  }
 }
