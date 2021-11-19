@@ -18,45 +18,45 @@ function testSuite() {
 
                 complete: function (response) {
                         testResults = response.responseText;
-                        if(testResults.contains("Connection to Server Successful$")) {
+                        if(testResults.includes("Connection to Server Successful$")) {
                                 console.log("Test 1: Successful")
                         }
                         else {
                                 console.log("Test 1: Failed")
                         }
 
-                        if(testResults.contains("Data Transfer to Server Successful$")) {
+                        if(testResults.includes("Data Transfer to Server Successful$")) {
                                 console.log("Test 2: Successful")
                         }
-                        if(testResults.contains("Data Transfer to Server Failed$")) {
+                        if(testResults.includes("Data Transfer to Server Failed$")) {
                                 console.log("Test 2: Failed")
                         }
 
-                        if(testResults.contains("Data Received from Server$")) {
+                        if(testResults.includes("Data Received from Server$")) {
                                 console.log("Test 3: Successful")
                         }
                         else {
                                 console.log("Test 3: Failed");
                         }
 
-                        if(testResults.contains("Connection to Database Successful$")) {
+                        if(testResults.includes("Connection to Database Successful$")) {
                                 console.log("Test 4: Successful")
                         }
-                        if(testResults.contains("Connection to Database Failed$")) {
+                        if(testResults.includes("Connection to Database Failed$")) {
                                 console.log("Test 4: Failed")
                         }
 
-                        if(testResults.contains("Database Query Successful$")) {
+                        if(testResults.includes("Database Query Successful$")) {
                                 console.log("Test 5: Successful")
                         }
-                        if(testResults.contains("Database Query Failed$")) {
+                        if(testResults.includes("Database Query Failed$")) {
                                 console.log("Test 5: Failed")
                         }
 
-                        if(testResults.contains("Database Query Returns Correct Value$")) {
+                        if(testResults.includes("Database Query Returns Correct Value$")) {
                                 console.log("Test 6: Successful")
                         }
-                        if(testResults.contains("Database Query Returns Incorrect Value$")) {
+                        if(testResults.includes("Database Query Returns Incorrect Value$")) {
                                 console.log("Test 6: Failed")
                         }
                 }
