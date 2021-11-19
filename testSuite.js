@@ -13,11 +13,14 @@ function testSuite() {
         jQuery.ajax({
                 type: 'POST',
                 url: 'testSuite.php',
-                dataType: 'text',
+                dataType: 'json',
                 data: senddata,
 
                 complete: function (response) {
-                        console.log(response);
+                        testResults = JSON.parse(response.responseText);
+                        if(testResults.contains("Connection to Server Successful")) {
+                                console.log("Test 1: Successful")
+                        }
                 }
         })
 }
