@@ -31,16 +31,16 @@
         //Test 5/6
         $sql = "
             SELECT TOP 1 [test]
-            FROM [DB_147588_findlostpets].[dbo].[testTable]"
-        $sqlquery = sqlsrv_query($conn, $sql)
+            FROM [DB_147588_findlostpets].[dbo].[testTable]";
+        $sqlquery = sqlsrv_query($conn, $sql);
         if($sqlquery!=NULL) {
-            echo "Database Query Successful$"
+            echo "Database Query Successful$";
         }
         else {
-            echo "Database Query Failed$"
+            echo "Database Query Failed$";
         }
         if($sqlquery.test == "test1") {
-            echo "Database Query Returns Correct Value$"
+            echo "Database Query Returns Correct Value$";
         }
         else {
             echo "Database Query Returns Incorrect Value$";
