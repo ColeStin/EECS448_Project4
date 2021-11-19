@@ -53,6 +53,14 @@
     margin: 3px;
 }
 
+.petDateLost{
+    text-align: left;
+    color: inherit;
+    display: block;
+    border-left: 4px solid rgb(186,143,112);
+    margin: 3px;
+}
+
 .ownerInfromation{
     text-align: left;
     color: inherit;
@@ -67,7 +75,7 @@
 }
 
 .portrait{
-    height: 300px;
+    height: 350px;
     width: 100%;
     display: block;
     margin:auto;

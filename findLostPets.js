@@ -24,7 +24,7 @@ function loadPage(){
             recieveData = JSON.parse(response.responseText) //parses JSON data from server
             Object.keys(recieveData).forEach(key => { //goes through each row and extracts the row, then sends it to the generate post function
                 var row = recieveData[key]
-                generatePost(row.petName,row.petType.trim(), row.petBreed.trim(), row.description, row.ownerName, row.zipCode, row.ContactNumber, row.portrait)
+                generatePost(row.petName,row.petType.trim(), row.petBreed.trim(), row.description, row.ownerName, row.zipCode, row.ContactNumber, row.portrait, row.dateLost)
               });
         },
         error: function (response) {
@@ -38,14 +38,14 @@ function loadPage(){
 //have a picture with height of 200pxs
 //have a section for description about pet
 //have contact information
-function generatePost(petName, petType, petBreed, description, ownerName, zipCode, contactNumber, portrait){    //takes every attribute displayed. 
+function generatePost(petName, petType, petBreed, description, ownerName, zipCode, contactNumber, portrait, dateLost){    //takes every attribute displayed.
                                                                                                                 //will generate a singular post in the postContainer div
     console.log("generating post");
     $("#postContainer").append( `
     <div class='col-sm-12 col-md-6 col-xl-4'>
         <div class='row postContainer container'>
             <div class='portrait col-sm-12 col-md-8'>
-            <img src="getPhoto.php?url=`+portrait+`" alt="`+portrait+`" id="`+portrait+`"> 
+            <img src="getPhoto.php?url=`+portrait+`" alt="`+portrait+`" id="`+portrait+`">
             </div>
             <div class='petInformation col-sm-12 col-md-4'>
             <!-- this div is for the pets information -->
@@ -62,6 +62,9 @@ function generatePost(petName, petType, petBreed, description, ownerName, zipCod
                     <div class='petDescription'>
                         Description: `+description+`
                     </div>
+                    <div class='petDateLost'>
+                        Date Lost: `+dateLost+`
+                    </div>
                     <div class='ownerInfromation'>
                         Owner Information: <br> `+ownerName+`<br>`+contactNumber+`<br>`+zipCode+`<br>
                     </div>
@@ -75,7 +78,7 @@ function generatePost(petName, petType, petBreed, description, ownerName, zipCod
 
 }
 
-//this function takes in the img name and the sendPacket for the image 
+//this function takes in the img name and the sendPacket for the image
 //it makes 2 seperate ajax calls, one that will post the image to the server
 //another that posts information to the SQL DB
 function createPost(sendPacket, imgName){
@@ -91,7 +94,7 @@ function createPost(sendPacket, imgName){
                 url:'uploadPhoto.php',
                 type: 'POST',
                 datatype: "script",
-                contentType: false, 
+                contentType: false,
                 cache: false,
                 processData: false,
                 data: sendPacket,
@@ -102,7 +105,7 @@ function createPost(sendPacket, imgName){
                     console.log("error")
                 }
             });
-            $.ajax({ //this is to upload the data of the post 
+            $.ajax({ //this is to upload the data of the post
                 url:'postToSQL.php',
                 type: 'POST',
                 datatype: "json",
@@ -116,8 +119,8 @@ function createPost(sendPacket, imgName){
             });
         }
     });
-    
-    
+
+
 }
 
 //this function creates a dictionary to send to the server of information that will be posted to the DB
@@ -132,6 +135,7 @@ function createSendData(){
     data.zipCode = $("#zipCode").val();
     data.contactNumber = $("#contactNumber").val();
     data.imgName = ""; //need to have a present key because after returning the dictionary
+    data.dateLost = $("#dateLost").val();
     console.log(data); //to verify the data is send correctly
     return data;
 }
@@ -156,7 +160,7 @@ function goodToSendData(){
 
 
 //this function is called when an image is uploaded to the form, it will start the process of being able to create a post
-//it takes the image data and creates a new FormData object to store the img and send to the server, 
+//it takes the image data and creates a new FormData object to store the img and send to the server,
 $("#img").change(function() {
     console.log(this.files[0])
     $("#imagePreview").removeClass('d-none');
@@ -165,7 +169,7 @@ $("#img").change(function() {
     console.log(img_data)
     createPost(img_data, this.files[0].name); //sends the img object and the image name to the create post function
   });
-  
+
 //this function simply allows for the user to open the modal and use it with a fresh start (clears the form and toggles it to show state)
 function startCreatingPost(){
     $("#petName").val("");
