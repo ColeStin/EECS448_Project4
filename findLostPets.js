@@ -146,7 +146,7 @@ function goodToSendData(){
     if($("#petName").val() == ""){
         return false;
     }
-    if($("#animalType").select2('data').id == ""){
+    if($('#animalType :selected').text() == ""){
         return false;
     }
     if($("#petBreed").val() == ""){
