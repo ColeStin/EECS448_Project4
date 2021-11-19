@@ -18,6 +18,7 @@ function testSuite() {
 
                 complete: function (response) {
                         testResults = response.responseText;
+                        console.log(testResults)
                         if(testResults.includes("Connection to Server Successful$")) {
                                 console.log("Test 1: Successful")
                         }

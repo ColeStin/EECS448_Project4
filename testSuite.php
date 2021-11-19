@@ -39,11 +39,12 @@
         else {
             echo "Database Query Failed$";
         }
-        if($sqlquery.test == "test1") {
-            echo "Database Query Returns Correct Value$";
-        }
-        else {
-            echo "Database Query Returns Incorrect Value$";
+        $rows = [];
+        while($row = sqlsrv_fetch_array($sqlCall)) //this will get every row of the sql return statement individually
+        {
+            if( in_array('test1', $row)) {
+                echo "Database Query Returns Correct Value$";
+            }
         }
 
     }
